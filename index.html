@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RPG Game </title>
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+<body>
+<div>
+  <h1>
+    Crystal Collector!
+  </h1>
+</div>
+<div class="instructions">
+  <p>
+    You will be given a random number at the start of the game. 
+  </p>
+  <p>
+    There are four crystals bellow. By clicking on a crystal you will add a specific amount of point to your total score. 
+  </p>
+  <p>
+    You win the game by matching your total score to random number, you lose the game if your total score goes above the random number. 
+  </p>
+  <p>
+    The value of each crystal is hidden from you until you click on it.
+  </p>
+  <p>
+    Each time when the game starts, the game will change the values of each crystal.  
+  </p>
+</div>
+<section>
+  <div id="random-number">
+    ...
+  </div>
+  <div class="score">
+    <p id="win-lose">
+    ...
+    </p>
+    <p id="wins">
+      Wins: 0
+    </p>
+    <p id="losses">
+      Losses: 0
+    </p>
+  </div>
+</section>
+<section class="crystal_container">
+  <div id="crystal1" class="crystals">
+    <i class="fa fa-diamond" aria-hidden="true"></i>
+  </div>
+  <div id="crystal2" class="crystals">
+    <i class="fa fa-diamond" aria-hidden="true"></i>
+  </div>
+  <div id="crystal3" class="crystals">
+    <i class="fa fa-diamond" aria-hidden="true"></i>
+  </div>
+  <div id="crystal4" class="crystals">
+    <i class="fa fa-diamond" aria-hidden="true"></i>
+  </div>
+</section>
+<div class="score_display">
+  Your total score 
+</div>
+<div id="total-number">
+  0
+</div>
+<script type="text/javascript" src="assets/game.js"></script>
+</body>
+</html>
