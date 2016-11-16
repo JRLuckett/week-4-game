@@ -1,63 +1,99 @@
-
-document.getElementById("win-lose").innerHTML = "";
-var newRandomNumber = document.getElementById('random-number').innerHTML = Math.floor((Math.random() * 101)+19);
+document.getElementById("win-lose").innerHTML = ""; 
+$('#random-number').html(Math.floor((Math.random() * 101)+19)); 
 $(document).ready(function() {
   var crystalOne = Math.floor((Math.random()*12)+1);
   var crystalTwo = Math.floor((Math.random()*12)+1);
   var crystalThree = Math.floor((Math.random()*12)+1);
   var crystalFour = Math.floor((Math.random()*12)+1);
+  var randomAmount = $('#random-number').html(); 
+  var nextNumber = $('#random-number').html();
   var total = 0;
-  // console.log(crystalOne);
-  // console.log(crystalTwo);
-  // console.log(crystalThree);
-  // console.log(crystalFour);
+  var wins = 0;
+  var losses = 0;
   var clear = function clear(){
-    crystalOne = 0;
-    crystalTwo = 0;
-    crystalThree = 0;
-    crystalFour = 0;
+    crystalOne = Math.floor((Math.random()*12)+1);
+    crystalTwo = Math.floor((Math.random()*12)+1);
+    crystalThree = Math.floor((Math.random()*12)+1);
+    crystalFour = Math.floor((Math.random()*12)+1);
     total = 0;
+    $('#total-number').html(0);
+    $('#random-number').html(Math.floor((Math.random() * 101)+19));
+    randomAmount = $('#random-number').html();
+
   }
   
   $('#crystal1').click(function(){
-    if ($('#win-lose').html() == "") {
-      total += crystalOne; 
+    total += crystalOne;
+    console.log(total);
+    if (total < randomAmount) {
+      console.log(randomAmount);
       $('#total-number').html(total);
       }
-    else {
+    else if (randomAmount == total){
+      wins++;
+      $('#wins').html('Wins: '+wins);
       clear();
-      // console.log(crystalOne); 
+    }
+    else{
+      losses++;
+      $('#losses').html('Losses: '+losses);
+      clear();
     }
   });
   $('#crystal2').click(function(){
-    if ($('#win-lose').html() == "") {
-      total += crystalTwo; 
+    total += crystalTwo;
+    console.log(total);
+    if (total < randomAmount) {
+      console.log(randomAmount);
       $('#total-number').html(total);
       }
-    else {
+    else if (randomAmount == total){
+      wins++;
+      $('#wins').html('Wins: '+wins);
       clear();
-      // console.log(crystalTwo); 
+    }
+    else{
+      losses++;
+      $('#losses').html('Losses: '+losses);
+      clear();
     }
   });
   $('#crystal3').click(function(){
-    if ($('#win-lose').html() == "") {
-      total += crystalThree; 
+    total += crystalThree;
+    console.log(total);
+    if (total < randomAmount) {
+      console.log(randomAmount);
       $('#total-number').html(total);
       }
-    else {
+    else if (randomAmount == total){
+      wins++;
+      $('#wins').html('Wins: '+wins);
       clear();
-      // console.log(crystalThree); 
+    }
+    else{
+      losses++;
+      $('#losses').html('Losses: '+losses);
+      clear();
     }
   });
   $('#crystal4').click(function(){
-    if ($('#win-lose').html() == "") {
-      total += crystalFour; 
+    total += crystalFour;
+    console.log(total);
+    if (total < randomAmount) {
+      console.log(randomAmount);
       $('#total-number').html(total);
       }
-    else {
+    else if (randomAmount == total){
+      wins++;
+      $('#wins').html('Wins: '+wins);
       clear();
-      // console.log(crystalFour); 
+    }
+    else{
+      losses++;
+      $('#losses').html('Losses: '+losses);
+      clear();
     }
   });
+
 
 });
